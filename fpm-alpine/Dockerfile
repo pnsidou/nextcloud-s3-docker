@@ -93,8 +93,7 @@ RUN { \
 
 VOLUME /var/www/html
 
-
-ENV NEXTCLOUD_VERSION 18.0.4
+ENV NEXTCLOUD_VERSION 21.0.1
 
 RUN set -ex; \
     apk add --no-cache --virtual .fetch-deps \
@@ -127,4 +126,5 @@ COPY php/php.override.ini /usr/local/etc/php/conf.d/php.override.ini
 COPY php/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 ENTRYPOINT ["/entrypoint.sh"]
+
 CMD ["php-fpm"]
